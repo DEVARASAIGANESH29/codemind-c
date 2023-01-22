@@ -1,17 +1,17 @@
 #include<stdio.h>
 int main()
 {
-    int n,s=0,rev,i;
+    int n,s=0,res;
     scanf("%d",&n);
-    for(i=1;i<=n;i++)
+    for(int i=1;i<=n;i++)
     {
         if(n%i==0)
         s=s+i;
-        rev=s-n;
+        res=s-n;
     }
-    if(rev==n)
+    if(res==n)
     printf("PERFECT");
-    else if(rev<n)
+    else if(res<n)
     printf("DEFICIENT");
     else
     printf("ABUNDANT");
