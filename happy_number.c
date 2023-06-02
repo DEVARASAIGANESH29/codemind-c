@@ -1,20 +1,38 @@
-#include<stdio.h>
-#include<math.h>
-int main(){
-    int n,r,ans=0;
-    scanf("%d",&n);
-    while(n){
-        r=n%10;
-        ans=ans+pow(r,2);
-        n=n/10;
-        if(n==0 && ans<10){
-            if(ans==7 || ans==1) printf("True");
-            else printf("False");
-        }
-        else if(n==0 && ans>=10){
-            n=ans;
-            ans=0;
-            r=0;
-   }
+# include <stdio.h>
+# include <math.h>
+# include <stdlib.h>
+# include <stdbool.h>
+
+
+int SumOfSquNum(int givno)
+{
+    int SumOfSqr = 0;
+    while (givno)
+    {
+        SumOfSqr += (givno % 10) * (givno % 10);
+        givno /= 10;
+    }
+    return SumOfSqr;
 }
+bool checkHappy(int chkhn)
+{
+    int slno, fstno;
+    slno = fstno = chkhn;
+    do
+    {
+        slno = SumOfSquNum(slno);
+        fstno = SumOfSquNum(SumOfSquNum(fstno));
+    }
+    while (slno != fstno);
+    return (slno == 1);
 }
+int main()
+{
+int hyno;
+	scanf("%d",&hyno);
+
+    if (checkHappy(hyno))
+	printf("True");
+    else
+	printf("False");
+} 
