@@ -1,18 +1,21 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int b,a,i,j,flag=0;
-    scanf("%d",&a);
-    for(i=1;i<=a/2;i++)
-    {
-    	if(a%i==0)
-    	{
-    		flag=flag+i;
-		}
-    }
-    if(flag==a)
-    {
-    	printf("True");
+	int n,i,c=0;
+	scanf("%d",&n);
+	for(i=1;i<=n/2;i++)
+	{
+	    if(n%i==0)
+	    {
+	       c=c+i;
+	    }
 	}
-	else printf("False");
+	if(c==n)
+	{
+	    printf("True");
+	}
+	else
+	{
+	    printf("False");
+	}
 }
