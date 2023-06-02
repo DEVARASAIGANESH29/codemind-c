@@ -1,20 +1,17 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int n,rem,sum=0,rem2,prod=1;
-    scanf("%d",&n);
-    int x=n;
-    while (n!=0) {
-        rem=n%10;
-        sum=sum+rem;
-        n/=10;
+    int i,unit,tb,b,count=0,charge,r,anit,pro=1,dif;
+    scanf("%d",&anit);
+    unit=anit;
+    while(unit!=0)
+    {
+        r=unit%10;
+        count=count+r;
+        pro=pro*r;
+        unit=unit/10;
     }
-    
-    while (x>0) {
-        rem2=x%10;
-        prod=prod*rem2;
-        x/=10;
-    }
-    int final_value=(prod-sum);
-    printf("%d",final_value);
+    dif=pro-count;
+    printf("%d",dif);
+   
 }
